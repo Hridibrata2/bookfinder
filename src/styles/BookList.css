@@ -1,0 +1,26 @@
+.booklist_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.booklist_container::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 12px;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.no_results {
+  font-size: 20px;
+  color: #3f3f3f;
+  text-align: center;
+  margin-top: 40px;
+}
