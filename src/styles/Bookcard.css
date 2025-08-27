@@ -1,3 +1,14 @@
+.books_container {
+  display: flex;                
+  flex-wrap: wrap;              
+  gap: 20px;                    
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
 .book_card {
   width: 120px;
   height: 220px;
@@ -8,13 +19,18 @@
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.book_card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
 }
 
 .book_cover {
@@ -35,52 +51,91 @@
   text-overflow: ellipsis;
 }
 
-.book_details {
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-size: 12px;
-  color: #555;
-  padding: 0 8px;
-  text-align: left;
-}
 
-.book_card:hover {
-  width: 300px;
-  height: auto;
-  transition: 2s ease;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-  align-items: flex-start;
-}
-
-.book_cover:hover {
-  height: 100%;
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  transition: 2s ease;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 15px;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
 }
 
-.book_card:hover .book_details {
-  opacity: 1;
-  transition: opacity 3s ease, max-height 0.3s ease;
-  max-height: 200px;
-  margin-top: 8px;
+.modal_content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 20%;
+  text-align: left;
+  position: relative;
+  animation: slideUp 0.3s ease;
 }
+
+.modal_cover {
+  width: 100%;
+  height: 80%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.modal_content h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.modal_content p {
+  font-size: 14px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.close_button {
+  margin-top: 10px;
+  background: #222;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close_button:hover {
+  background: #444;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
 
 @media (max-width: 600px) {
   .book_card {
     width: 100px;
     height: 200px;
   }
-
-  .book_card:hover {
-    width: 100%;
-  }
-
   .book_title {
-    font-size: 12px;
-  }
-
-  .book_details {
     font-size: 11px;
+  }
+  .modal_content {
+    max-width: 90%;
+    padding: 15px;
   }
 }
