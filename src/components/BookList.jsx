@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { BookContext } from '../context/BookContext';
 import Loader from './Loader';
 import BookCard from './Bookcard';
@@ -8,6 +8,11 @@ const BookList = () => {
   const { books, loading, error, searchTerm } = useContext(BookContext);
   const [page, setPage] = useState(1);
   const booksPerPage = 10;
+
+  
+  useEffect(() => {
+    setPage(1);
+  }, [searchTerm]);
 
   const totalPages = Math.ceil(books.length / booksPerPage);
   const startIndex = (page - 1) * booksPerPage;
