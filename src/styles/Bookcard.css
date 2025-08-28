@@ -134,5 +134,13 @@
   .book_details {
     font-size: 11px;
   }
+
+  .modal_overlay{
+    width: 100%;
+  }
+
+  .modal_content{
+    width: 60%;
+  }
 }
 
