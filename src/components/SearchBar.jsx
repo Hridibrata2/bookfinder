@@ -17,16 +17,22 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search_bar">
-      <input
-        className="search_input"
-        type="text"
-        placeholder="Search for books"
-        value={book}
-        onChange={(e) => setBook(e.target.value)}
-        onKeyDown={handleKeyPress}
-      />
-    </div>
+
+<div className="header">
+  <div className="header_container">
+    <h1 className="header_title">VerseVault</h1>
+  </div>
+<div className="search_bar">
+  <input
+    className="search_input"
+    type="text"
+    placeholder="Search for books"
+    value={book}
+    onChange={(e) => setBook(e.target.value)}
+    onKeyDown={handleKeyPress}
+  />
+</div>
+</div>
   );
 };
 

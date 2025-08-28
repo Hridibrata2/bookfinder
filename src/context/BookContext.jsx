@@ -24,7 +24,7 @@ export const BookProvider = ({ children }) => {
         const res = await axios.get('https://openlibrary.org/search.json?q={random}');
         const data = res.data;
         const shuffle = shuffleArray(data.docs || []);
-        setBooks(shuffle.slice(0, 20)); 
+        setBooks(shuffle.slice(0, 50)); 
       } catch (err) {
         setError('Failed to fetch random books.');
         setBooks([]);
@@ -45,7 +45,7 @@ export const BookProvider = ({ children }) => {
     try {
       const res = await axios.get(`https://openlibrary.org/search.json?q=${query}`);
       const data = res.data;
-      setBooks(data.docs.length > 0 ? data.docs.slice(0, 20) : []);
+      setBooks(data.docs.length > 0 ? data.docs.slice(0, 50) : []);
     } catch (err) {
       setError('Failed to fetch books. Try again.');
       setBooks([]);
