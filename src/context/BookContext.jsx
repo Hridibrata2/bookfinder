@@ -23,8 +23,8 @@ export const BookProvider = ({ children }) => {
       try {
         const res = await axios.get('https://openlibrary.org/search.json?q={random}');
         const data = res.data;
-        const shuffled = shuffleArray(data.docs || []);
-        setBooks(shuffled.slice(0, 20)); 
+        const shuffle = shuffleArray(data.docs || []);
+        setBooks(shuffle.slice(0, 20)); 
       } catch (err) {
         setError('Failed to fetch random books.');
         setBooks([]);

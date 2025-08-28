@@ -135,7 +135,7 @@
     font-size: 11px;
   }
   .modal_content {
-    max-width: 90%;
+    width: 40%;
     padding: 15px;
   }
 }

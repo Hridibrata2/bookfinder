@@ -43,9 +43,6 @@ const BookCard = ({ book }) => {
             <p><strong>Published:</strong> {first_publish_year || 'N/A'}</p>
             <p><strong>Subtitle:</strong> {subtitle || 'N/A'}</p>
             <p><strong>Language:</strong> {language?.join(', ') || 'N/A'}</p>
-            <button className="close_button" onClick={() => setShowModal(false)}>
-              Close
-            </button>
           </div>
         </div>
       )}
