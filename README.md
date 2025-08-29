@@ -1,12 +1,16 @@
-# React + Vite
+# 💫 About Me:
+## **About VerseVault**<br><br>**VerseVault** is a sleek and responsive web application built with **React** that allows users to **search for books by name** and quickly access **essential information** about each title. Whether you’re an avid reader, a student, or just curious about a book you heard of, VerseVault makes discovering books effortless.<br><br>---<br><br>### **Key Features**<br><br>- **Real-time book search** – find titles as you type.  <br>- **Basic details at a glance** – Cover image and Title.  <br>- **More details when clicked** – When clicked on a card, more details such as author name, publishing year, language, and subtitle appear.  <br>- **Clean, modern interface** – optimized for both desktop and mobile screens, with easy navigation using pagination.  <br>- **Fast performance** – built using React’s component-based architecture.  <br><br>---<br><br>### **Tech Stack**<br><br>- **Frontend:** React (with hooks and functional components)  <br>- **Styling:** CSS (or Tailwind, if you used it) for a responsive UI  <br>- **API:** [Open Library API](https://openlibrary.org/developers/api) for fetching book data  <br>- **Package Management:** npm  <br>- **Version Control:** Git and GitHub for code hosting  <br><br>---<br><br>### **Why VerseVault?**<br><br>Finding information about books can be scattered or time-consuming. VerseVault acts as your **personal book lookup tool**, helping you:<br><br>- Decide what to read next.  <br>- Quickly verify author names and editions.  <br>- Discover classics and hidden gems.  <br><br>---<br><br>### **Future Improvements**<br><br>- Add **user accounts** to save favorite books.  <br>- Implement **filters** by genre, add a **PDF viewer preview**, and show **book descriptions**.  <br>- Integrate **book reviews or ratings** from external sources.  <br>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## 🌐 Socials:
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/thisishridi) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Hridibrata Saha) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/@hritayan) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:hridibrata@gmail.com) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 💻 Tech Stack:
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Bash Script](https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Hridibrata2&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Hridibrata2&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Hridibrata2&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+[![](https://visitcount.itsvg.in/api?id=Hridibrata2&icon=0&color=0)](https://visitcount.itsvg.in)
