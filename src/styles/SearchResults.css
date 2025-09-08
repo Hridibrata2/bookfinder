@@ -1,0 +1,21 @@
+.back_button{
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        font-size: 24px;
+        color: #007BFF;
+        cursor: pointer;
+    }
+
+
+@media only screen and (max-width: 760px) {
+    .back_button{
+        position: absolute;
+        top:90px;
+        z-index: 1000;
+        left: 20px;
+        font-size: 24px;
+        color: #007BFF;
+        cursor: pointer;
+    }
+}

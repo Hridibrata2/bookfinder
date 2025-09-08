@@ -2,7 +2,6 @@
     width: 40%;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #1a1919;
     border-radius: 4px;
 }
 
@@ -14,14 +13,22 @@
 
 .search_bar {
     display: flex;
+    top: 10px;
     justify-content: center;
-    margin: 20px 0;
+    border-width: 0;
+}
+
+.header {
+    background-color: #d0e1ff;
+    height: 120px;
+    padding-top: 20px;
+    position: relative;
 }
 
 .header_title {
-
-    margin-left: 20px;
-    margin-top: 10;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 110px;
     margin-bottom: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -32,14 +39,29 @@ body {
 
 @media (max-width: 600px) {
     .search_input {
-        width: 80%;
+        width: 70%;
+        border-radius: 50px;
     }
 
-    .header_top{
+    .header{
+        background-color: #d0e1ff;
+        height:120px;
+        padding-top: 10px;
+    }
+
+
+.search_input{
+    padding: 10px;
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+    .header_title{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 15px;
     }
 }

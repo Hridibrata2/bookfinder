@@ -1,64 +1,76 @@
-import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { createContext, useState, useCallback } from "react";
+import axios from "axios";
 
 export const BookContext = createContext();
 
 export const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const shuffleArray = (array) =>
-    array
-      .map(item => ({ item, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ item }) => item);
-
-  
-  useEffect(() => {
-    const fetchRandomBooks = async () => {
-      setLoading(true);
-      setError('');
-      try {
-        const res = await axios.get('https://openlibrary.org/search.json?q={random}');
-        const data = res.data;
-        const shuffle = shuffleArray(data.docs || []);
-        setBooks(shuffle.slice(0, 50)); 
-      } catch (err) {
-        setError('Failed to fetch random books.');
-        setBooks([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRandomBooks();
-  }, []);
-
-  const searchBooks = async (query) => {
-    if (!query) return;
-    setLoading(true);
-    setError('');
-    setSearchTerm(query);
-
+  // 🔎 Search books by query
+  const searchBooks = useCallback(async (query) => {
     try {
-      const res = await axios.get(`https://openlibrary.org/search.json?q=${query}`);
-      const data = res.data;
-      setBooks(data.docs.length > 0 ? data.docs.slice(0, 50) : []);
+      setLoading(true);
+      setError("");
+      setSearchTerm(query);
+
+      const res = await axios.get(
+        `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`
+      );
+
+      setBooks(res.data.docs || []);
     } catch (err) {
-      setError('Failed to fetch books. Try again.');
-      setBooks([]);
+      setError("Failed to fetch search results.");
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  // 🎲 Fetch random "fiction" books with random offset
+  const fetchRandomBooks = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError("");
+      setSearchTerm("");
+
+
+      const randomOffset = Math.floor(Math.random() * 1000);
+
+      const res = await axios.get(
+        `https://openlibrary.org/subjects/fiction.json?limit=50&offset=${randomOffset}`
+      );
+
+      const normalizedBooks = (res.data.works || []).map((work) => ({
+        key: work.key,
+        title: work.title,
+        author_name: work.authors ? work.authors.map((a) => a.name) : ["Unknown"],
+        first_publish_year: work.first_publish_year,
+        cover_i: work.cover_id,
+        language: work.language || ["N/A"],
+      }));
+
+      setBooks(normalizedBooks);
+    } catch (err) {
+      setError("Failed to fetch random books.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   return (
-    <BookContext.Provider value={{ books, loading, error, searchTerm, searchBooks }}>
+    <BookContext.Provider
+      value={{
+        books,
+        loading,
+        error,
+        searchTerm,
+        searchBooks,
+        fetchRandomBooks,
+      }}
+    >
       {children}
     </BookContext.Provider>
   );
 };
-
-export default BookProvider;

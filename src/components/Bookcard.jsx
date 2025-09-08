@@ -9,7 +9,7 @@ const BookCard = ({ book }) => {
     author_name,
     first_publish_year,
     subtitle,
-    language,
+    language, 
     cover_i,
   } = book;
 
